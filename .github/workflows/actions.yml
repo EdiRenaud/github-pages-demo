@@ -1,24 +1,26 @@
-name: CICD workflows
+name: workflows
 permissions:
   contents: write
 on:
   workflow_dispatch:
   push:
     branches:
-      - develop
-    paths-ignore:
-      - '.github/workflows/*'
-  pull_request:
-    branches:
       - main
-    types:
-      - opened
+  #  paths-ignore:
+  #    - '.github/workflows/*'
+  # pull_request:
+  #  branches:
+  #    - main
+  #  types:
+  #    - opened
 
 jobs: #Commandes à exécuter
-  job1:
+  # test: 
+  # build: 
+  deploy: 
     runs-on: ubuntu-latest
     steps:
-      - name: Code
+      - name: Code 
         uses: actions/checkout@v4
       #- name: Install java
       #  uses: actions/setup-java@v4
