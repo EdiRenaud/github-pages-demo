@@ -1,0 +1,37 @@
+name: CICD workflows
+permissions:
+  contents: write
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+    paths-ignore:
+      - '.github/workflows/*'
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+
+jobs: #Commandes à exécuter
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code
+        uses: actions/checkout@v4
+      #- name: Install java
+      #  uses: actions/setup-java@v4
+      #  with:
+      #    distribution: 'oracle'
+      #    java-version: '17'
+      #    cache: maven
+      #- name: Execute test
+      #  run: mvn test
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with: 
+          folder: .
+          branch: main
+        #env:
+        #  ACCESS_TOKEN: {{ secrets.ACCESS_TOKEN}}
