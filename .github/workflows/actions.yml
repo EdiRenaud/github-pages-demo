@@ -39,9 +39,10 @@ jobs: #Commandes à exécuter
       #- name: Execute test
       #  run: mvn test
       - name: deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with: 
-          folder: .
-          branch: gh-pages
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.edirenaud.site
+          username: edire2362051
+          password: n4pN7P9f6s4
         #env:
         #  ACCESS_TOKEN: {{ secrets.ACCESS_TOKEN}}
