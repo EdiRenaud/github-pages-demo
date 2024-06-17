@@ -15,9 +15,17 @@ on:
   #    - opened
 
 jobs: #Commandes à exécuter
-  # test: 
-  # build: 
+  test: 
+    runs-on: ubuntu-latest
+    steps: 
+      - run: echo "Test is OK"
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Build is Ok"
   deploy: 
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Code 
