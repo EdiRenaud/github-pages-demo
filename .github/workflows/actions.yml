@@ -42,7 +42,7 @@ jobs: #Commandes à exécuter
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.edirenaud.site
-          username: {{ secrets.USERNAME}}
-          password: {{ secrets.PASSWORD}}
+          username: {{secrets.USERNAME}}
+          password: {{secrets.PASSWORD}}
         #env:
         #  ACCESS_TOKEN: {{ secrets.ACCESS_TOKEN}}
