@@ -21,12 +21,12 @@ jobs: #Commandes à exécuter
       - run: echo "Test is OK"
   build:
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - run: echo "Build is Ok"
   deploy: 
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Code 
         uses: actions/checkout@v4
