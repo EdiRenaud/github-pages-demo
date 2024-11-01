@@ -30,6 +30,13 @@ jobs: #Commandes à exécuter
     steps:
       - name: Code 
         uses: actions/checkout@v4
+      - name: Upload from public_html via FTP
+        uses: airvzxf/ftp-deployment-action@latest
+        with:
+          server: ftp.edirenaud.site
+          user: edire2362051
+          password: n4pN7P9f6s4
+          local_dir: "./"
       #- name: Install java
       #  uses: actions/setup-java@v4
       #  with:
@@ -38,11 +45,11 @@ jobs: #Commandes à exécuter
       #    cache: maven
       #- name: Execute test
       #  run: mvn test
-      - name: deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ftp.edirenaud.site
-          username: edire2362051
-          password: n4pN7P9f6s4
+      #- name: deploy
+      #  uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      #  with:
+      #    server: ftp.edirenaud.site
+      #    username: edire2362051
+      #    password: n4pN7P9f6s4
         #env:
         #  ACCESS_TOKEN: {{ secrets.ACCESS_TOKEN}}
